@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DictViewController.h"
 
 @interface LogViewController : UIViewController
 

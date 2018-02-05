@@ -5,7 +5,7 @@
 //  Created by 李嘉银 on 13/12/2017.
 //  Copyright © 2017 李嘉银. All rights reserved.
 //
-#define darkBlueColor [UIColor colorWithRed:108/255. green:227/255. blue:228/255. alpha:1]
+#define lightBlueColor [UIColor colorWithRed:108/255. green:227/255. blue:228/255. alpha:1]
 
 #import "LoginViewController.h"
 
@@ -42,7 +42,7 @@
     self.switchToRegisterBtn=[UIButton buttonWithType:UIButtonTypeSystem];
     [self.view addSubview:self.switchToRegisterBtn];
     [self.view addSubview:self.switchToLoginBtn];
-    self.switchToLoginBtn.backgroundColor=darkBlueColor;
+    self.switchToLoginBtn.backgroundColor=lightBlueColor;
     self.switchToRegisterBtn.backgroundColor=[UIColor lightGrayColor];
     [self.switchToLoginBtn addTarget:self action:@selector(SwitchToLogin) forControlEvents:UIControlEventTouchUpInside];
     [self.switchToRegisterBtn addTarget:self action:@selector(SwitchToRegister) forControlEvents:UIControlEventTouchUpInside];
@@ -78,7 +78,7 @@
         make.right.equalTo(self.view.mas_right).with.offset(-33);
         make.height.equalTo(@(89.f));
     }];
-    inputView.layer.borderColor=darkBlueColor.CGColor;
+    inputView.layer.borderColor=lightBlueColor.CGColor;
     inputView.layer.borderWidth=2.0f;
     inputView.layer.cornerRadius=8.0f;
     //输入框中的分割线
@@ -90,7 +90,7 @@
         make.right.equalTo(inputView.mas_right).with.offset(0);
         make.height.equalTo(@(2.f));
     }];
-    separater.layer.borderColor=darkBlueColor.CGColor;
+    separater.layer.borderColor=lightBlueColor.CGColor;
     separater.layer.borderWidth=1.0f;
     //输入框中的icon
     UIImageView * icon1=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"我的"]];
@@ -144,7 +144,7 @@
     [self.submitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.submitBtn setFont:[UIFont systemFontOfSize:20 weight:UIFontWeightBold]];
     [self.view addSubview:self.submitBtn];
-    self.submitBtn.layer.borderColor=darkBlueColor.CGColor;
+    self.submitBtn.layer.borderColor=lightBlueColor.CGColor;
     self.submitBtn.layer.borderWidth=2.0f;
     self.submitBtn.layer.cornerRadius=8;
     self.submitBtn.enabled=NO;
@@ -156,12 +156,12 @@
     }];
     [self.submitBtn addTarget:self action:@selector(Submit) forControlEvents:UIControlEventTouchUpInside];
     self.cancelBtn=[UIButton buttonWithType:UIButtonTypeSystem];
-    self.cancelBtn.backgroundColor=darkBlueColor;
+    self.cancelBtn.backgroundColor=lightBlueColor;
     [self.cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
     [self.cancelBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.cancelBtn setFont:[UIFont systemFontOfSize:20 weight:UIFontWeightBold]];
     [self.view addSubview:self.cancelBtn];
-    self.cancelBtn.layer.borderColor=darkBlueColor.CGColor;
+    self.cancelBtn.layer.borderColor=lightBlueColor.CGColor;
     self.cancelBtn.layer.borderWidth=2.0f;
     self.cancelBtn.layer.cornerRadius=8;
     [self.cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -191,7 +191,7 @@
         self.switchUnderLine.layer.affineTransform=CGAffineTransformIdentity;
         self.switchToRegisterBtn.layer.affineTransform=CGAffineTransformMakeScale(0.8, 0.8);
         self.switchToRegisterBtn.backgroundColor=[UIColor lightGrayColor];
-        self.switchToLoginBtn.backgroundColor=darkBlueColor;
+        self.switchToLoginBtn.backgroundColor=lightBlueColor;
         
     }];
 }
@@ -206,7 +206,7 @@
         self.switchToRegisterBtn.layer.affineTransform=CGAffineTransformIdentity;
         self.switchToLoginBtn.layer.affineTransform=CGAffineTransformMakeScale(0.8, 0.8);
     self.switchUnderLine.layer.affineTransform=CGAffineTransformMakeTranslation(self.switchToRegisterBtn.center.x-self.switchToLoginBtn.center.x, 0);
-        self.switchToRegisterBtn.backgroundColor=darkBlueColor;
+        self.switchToRegisterBtn.backgroundColor=lightBlueColor;
         self.switchToLoginBtn.backgroundColor=[UIColor lightGrayColor];
         [self.submitBtn setTitle:@"注册" forState:UIControlStateNormal];
         self.accountTextField.placeholder=@"请设置账号";
@@ -294,7 +294,7 @@
     if (accountText.length!=0&&
         passwordText.length!=0) {
         self.submitBtn.enabled=YES;
-        self.submitBtn.backgroundColor=darkBlueColor;
+        self.submitBtn.backgroundColor=lightBlueColor;
     }
     else{
         self.submitBtn.enabled=NO;
