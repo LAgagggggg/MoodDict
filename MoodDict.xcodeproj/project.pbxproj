@@ -16,6 +16,7 @@
 		08A612982027F49A0021F387 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A612972027F49A0021F387 /* main.m */; };
 		08A612A0202803C40021F387 /* SideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A6129F202803C40021F387 /* SideMenuView.m */; };
 		08A612A32028049B0021F387 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A612A22028049B0021F387 /* LoginViewController.m */; };
+		290B80A72028401400999537 /* CommonButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 290B80A62028401400999537 /* CommonButton.m */; };
 		BA0A1B40EB00A07C4F8FFB94 /* libPods-MoodDict.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C6A6EAF69670C3190AA2F9 /* libPods-MoodDict.a */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,8 @@
 		08A612A12028049B0021F387 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		08A612A22028049B0021F387 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		097E90B39FE0D274B9462E0D /* Pods-MoodDict.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodDict.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoodDict/Pods-MoodDict.release.xcconfig"; sourceTree = "<group>"; };
+		290B80A52028401400999537 /* CommonButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonButton.h; sourceTree = "<group>"; };
+		290B80A62028401400999537 /* CommonButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonButton.m; sourceTree = "<group>"; };
 		4E26749F2065626CC0C7F997 /* Pods-MoodDict.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodDict.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoodDict/Pods-MoodDict.debug.xcconfig"; sourceTree = "<group>"; };
 		74C6A6EAF69670C3190AA2F9 /* libPods-MoodDict.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoodDict.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,6 +77,7 @@
 		08A612842027F49A0021F387 /* MoodDict */ = {
 			isa = PBXGroup;
 			children = (
+				290B80A420283FF000999537 /* ButtonConfig */,
 				08A612852027F49A0021F387 /* AppDelegate.h */,
 				08A612862027F49A0021F387 /* AppDelegate.m */,
 				08A612A12028049B0021F387 /* LoginViewController.h */,
@@ -91,6 +95,15 @@
 				08A612972027F49A0021F387 /* main.m */,
 			);
 			path = MoodDict;
+			sourceTree = "<group>";
+		};
+		290B80A420283FF000999537 /* ButtonConfig */ = {
+			isa = PBXGroup;
+			children = (
+				290B80A52028401400999537 /* CommonButton.h */,
+				290B80A62028401400999537 /* CommonButton.m */,
+			);
+			path = ButtonConfig;
 			sourceTree = "<group>";
 		};
 		5F2B4A638C7DF0CC6BEDB508 /* Frameworks */ = {
@@ -244,6 +257,7 @@
 				08A612872027F49A0021F387 /* AppDelegate.m in Sources */,
 				08A612982027F49A0021F387 /* main.m in Sources */,
 				08A6128A2027F49A0021F387 /* DictViewController.m in Sources */,
+				290B80A72028401400999537 /* CommonButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
