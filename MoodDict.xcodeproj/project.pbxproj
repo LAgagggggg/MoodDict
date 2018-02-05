@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		088A1BF7202844B30041D19B /* LogItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 088A1BF6202844B30041D19B /* LogItem.m */; };
 		08A612872027F49A0021F387 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A612862027F49A0021F387 /* AppDelegate.m */; };
 		08A6128A2027F49A0021F387 /* DictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A612892027F49A0021F387 /* DictViewController.m */; };
 		08A6128D2027F49A0021F387 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A6128C2027F49A0021F387 /* LogViewController.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		088A1BF5202844B30041D19B /* LogItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogItem.h; sourceTree = "<group>"; };
+		088A1BF6202844B30041D19B /* LogItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogItem.m; sourceTree = "<group>"; };
 		08A612822027F49A0021F387 /* MoodDict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodDict.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A612852027F49A0021F387 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		08A612862027F49A0021F387 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 				08A612892027F49A0021F387 /* DictViewController.m */,
 				08A6128B2027F49A0021F387 /* LogViewController.h */,
 				08A6128C2027F49A0021F387 /* LogViewController.m */,
+				088A1BF5202844B30041D19B /* LogItem.h */,
+				088A1BF6202844B30041D19B /* LogItem.m */,
 				08A6128E2027F49A0021F387 /* Main.storyboard */,
 				08A612912027F49A0021F387 /* Assets.xcassets */,
 				08A612932027F49A0021F387 /* LaunchScreen.storyboard */,
@@ -240,6 +245,7 @@
 			files = (
 				08A6128D2027F49A0021F387 /* LogViewController.m in Sources */,
 				08A612A0202803C40021F387 /* SideMenuView.m in Sources */,
+				088A1BF7202844B30041D19B /* LogItem.m in Sources */,
 				08A612A32028049B0021F387 /* LoginViewController.m in Sources */,
 				08A612872027F49A0021F387 /* AppDelegate.m in Sources */,
 				08A612982027F49A0021F387 /* main.m in Sources */,

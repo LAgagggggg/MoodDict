@@ -36,7 +36,6 @@
     UIPanGestureRecognizer * pan=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
     [self.pullMenuView addGestureRecognizer:pan];
     [self.pullMenuView.logoutBtn addTarget:self action:@selector(QuitLogin) forControlEvents:UIControlEventTouchUpInside];
-
     
 }
 
