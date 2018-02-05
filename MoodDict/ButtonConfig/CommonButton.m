@@ -24,7 +24,7 @@
     UIColor * btnColor = [UIColor colorWithRed:216.0/255.0 green:216.0/255.0 blue:216.0/255.0 alpha:1.0];
     self.backgroundColor = btnColor;
     self.layer.cornerRadius = 5.0;
-    [self setTitleColor:[UIColor colorWithRed:48.0/255 green:99.0/255 blue:269.0/255 alpha:1.0] forState:UIControlStateNormal];
+
 }
 
     
