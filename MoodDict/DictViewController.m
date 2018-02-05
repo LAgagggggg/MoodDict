@@ -14,13 +14,13 @@
 @property(strong,nonatomic)UIImage * myIcon;
 @property (weak, nonatomic) IBOutlet UINavigationBar *naviBar;
 @property(strong,nonatomic)UIView * mainWrapperView;
+@property BOOL loginJudege;
 @end
 
 @implementation DictViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"hhhhhhhh");
     UITapGestureRecognizer * tap=[[UITapGestureRecognizer alloc]init];//emmm用来取消编辑
     tap.delegate=self;
     [self.tabBarController.view addGestureRecognizer:tap];
@@ -40,6 +40,16 @@
     
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    NSUserDefaults * defaults=[NSUserDefaults standardUserDefaults];
+    self.loginJudege=[defaults boolForKey:@"loginSuccessJudge"];
+    if (self.loginJudege==YES) {
+        self.pullMenuView.userInteractionEnabled=YES;
+    }
+    else{
+        self.pullMenuView.userInteractionEnabled=NO;
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -48,10 +58,16 @@
 
 
 - (IBAction)PullSideMenu:(id)sender {
-    NSUserDefaults * defaults=[NSUserDefaults standardUserDefaults];
-    BOOL loginJudege=[defaults boolForKey:@"loginSuccessJudge"];
-    if (loginJudege) {
-        
+    [self doCallSideMenu];
+}
+-(void)doCallSideMenu{
+    if (self.loginJudege) {
+        CGRect frame=self.pullMenuView.frame;
+        frame.origin.x=0;
+        [UIView animateWithDuration:animationDURATION animations:^{
+            self.pullMenuView.frame=frame;
+            self.mainWrapperView.alpha=0.5;
+        }];
     }
     else{
         LoginViewController * vc=[[LoginViewController alloc]init];
@@ -135,5 +151,12 @@
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)QuitLogin{
+    NSUserDefaults * defaults=[NSUserDefaults standardUserDefaults];
+    [defaults setBool:NO forKey:@"loginSuccessJudge"];
+    self.loginJudege=NO;
+    self.pullMenuView.userInteractionEnabled=NO;
 }
 @end

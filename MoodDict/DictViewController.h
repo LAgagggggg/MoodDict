@@ -12,5 +12,6 @@
 
 @interface DictViewController : UIViewController<UIGestureRecognizerDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
+-(void)doCallSideMenu;
 @end
 

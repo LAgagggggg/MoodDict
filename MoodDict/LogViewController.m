@@ -9,7 +9,7 @@
 #import "LogViewController.h"
 
 @interface LogViewController ()
-
+@property(strong,nonatomic)DictViewController * dictVc;
 @end
 
 @implementation LogViewController
@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.dictVc=self.tabBarController.viewControllers[0];
 }
 
 
@@ -26,6 +27,7 @@
 }
 
 - (IBAction)PullSideMenu:(id)sender {
+    [self.dictVc doCallSideMenu];
 }
 
 @end
