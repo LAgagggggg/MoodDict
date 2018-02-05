@@ -8,27 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		08A612872027F49A0021F387 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A612862027F49A0021F387 /* AppDelegate.m */; };
-		08A6128A2027F49A0021F387 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A612892027F49A0021F387 /* FirstViewController.m */; };
-		08A6128D2027F49A0021F387 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A6128C2027F49A0021F387 /* SecondViewController.m */; };
+		08A6128A2027F49A0021F387 /* DictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A612892027F49A0021F387 /* DictViewController.m */; };
+		08A6128D2027F49A0021F387 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A6128C2027F49A0021F387 /* LogViewController.m */; };
 		08A612902027F49A0021F387 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A6128E2027F49A0021F387 /* Main.storyboard */; };
 		08A612922027F49A0021F387 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A612912027F49A0021F387 /* Assets.xcassets */; };
 		08A612952027F49A0021F387 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A612932027F49A0021F387 /* LaunchScreen.storyboard */; };
 		08A612982027F49A0021F387 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A612972027F49A0021F387 /* main.m */; };
+		08A612A0202803C40021F387 /* SideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A6129F202803C40021F387 /* SideMenuView.m */; };
+		08A612A32028049B0021F387 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A612A22028049B0021F387 /* LoginViewController.m */; };
+		BA0A1B40EB00A07C4F8FFB94 /* libPods-MoodDict.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C6A6EAF69670C3190AA2F9 /* libPods-MoodDict.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		08A612822027F49A0021F387 /* MoodDict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodDict.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A612852027F49A0021F387 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		08A612862027F49A0021F387 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		08A612882027F49A0021F387 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		08A612892027F49A0021F387 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		08A6128B2027F49A0021F387 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		08A6128C2027F49A0021F387 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		08A612882027F49A0021F387 /* DictViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictViewController.h; sourceTree = "<group>"; };
+		08A612892027F49A0021F387 /* DictViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictViewController.m; sourceTree = "<group>"; };
+		08A6128B2027F49A0021F387 /* LogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
+		08A6128C2027F49A0021F387 /* LogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
 		08A6128F2027F49A0021F387 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08A612912027F49A0021F387 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08A612942027F49A0021F387 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08A612962027F49A0021F387 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08A612972027F49A0021F387 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		08A6129E202803C40021F387 /* SideMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuView.h; sourceTree = "<group>"; };
+		08A6129F202803C40021F387 /* SideMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuView.m; sourceTree = "<group>"; };
+		08A612A12028049B0021F387 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		08A612A22028049B0021F387 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		097E90B39FE0D274B9462E0D /* Pods-MoodDict.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodDict.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoodDict/Pods-MoodDict.release.xcconfig"; sourceTree = "<group>"; };
+		4E26749F2065626CC0C7F997 /* Pods-MoodDict.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodDict.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoodDict/Pods-MoodDict.debug.xcconfig"; sourceTree = "<group>"; };
+		74C6A6EAF69670C3190AA2F9 /* libPods-MoodDict.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoodDict.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA0A1B40EB00A07C4F8FFB94 /* libPods-MoodDict.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +58,8 @@
 			children = (
 				08A612842027F49A0021F387 /* MoodDict */,
 				08A612832027F49A0021F387 /* Products */,
+				7E63324D785952435BFEE35A /* Pods */,
+				5F2B4A638C7DF0CC6BEDB508 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,10 +76,14 @@
 			children = (
 				08A612852027F49A0021F387 /* AppDelegate.h */,
 				08A612862027F49A0021F387 /* AppDelegate.m */,
-				08A612882027F49A0021F387 /* FirstViewController.h */,
-				08A612892027F49A0021F387 /* FirstViewController.m */,
-				08A6128B2027F49A0021F387 /* SecondViewController.h */,
-				08A6128C2027F49A0021F387 /* SecondViewController.m */,
+				08A612A12028049B0021F387 /* LoginViewController.h */,
+				08A612A22028049B0021F387 /* LoginViewController.m */,
+				08A6129E202803C40021F387 /* SideMenuView.h */,
+				08A6129F202803C40021F387 /* SideMenuView.m */,
+				08A612882027F49A0021F387 /* DictViewController.h */,
+				08A612892027F49A0021F387 /* DictViewController.m */,
+				08A6128B2027F49A0021F387 /* LogViewController.h */,
+				08A6128C2027F49A0021F387 /* LogViewController.m */,
 				08A6128E2027F49A0021F387 /* Main.storyboard */,
 				08A612912027F49A0021F387 /* Assets.xcassets */,
 				08A612932027F49A0021F387 /* LaunchScreen.storyboard */,
@@ -76,6 +93,23 @@
 			path = MoodDict;
 			sourceTree = "<group>";
 		};
+		5F2B4A638C7DF0CC6BEDB508 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74C6A6EAF69670C3190AA2F9 /* libPods-MoodDict.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E63324D785952435BFEE35A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E26749F2065626CC0C7F997 /* Pods-MoodDict.debug.xcconfig */,
+				097E90B39FE0D274B9462E0D /* Pods-MoodDict.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +117,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08A6129B2027F49A0021F387 /* Build configuration list for PBXNativeTarget "MoodDict" */;
 			buildPhases = (
+				F68FA99BA2FD2B5C52B94EDC /* [CP] Check Pods Manifest.lock */,
 				08A6127E2027F49A0021F387 /* Sources */,
 				08A6127F2027F49A0021F387 /* Frameworks */,
 				08A612802027F49A0021F387 /* Resources */,
+				31A6061FE4880F80F29D0DA6 /* [CP] Embed Pods Frameworks */,
+				577D1BE66FACC7B240E68B07 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -142,15 +179,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		31A6061FE4880F80F29D0DA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MoodDict/Pods-MoodDict-frameworks.sh",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-11/iOS/RevealServer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoodDict/Pods-MoodDict-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		577D1BE66FACC7B240E68B07 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoodDict/Pods-MoodDict-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F68FA99BA2FD2B5C52B94EDC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoodDict-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		08A6127E2027F49A0021F387 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08A6128D2027F49A0021F387 /* SecondViewController.m in Sources */,
+				08A6128D2027F49A0021F387 /* LogViewController.m in Sources */,
+				08A612A0202803C40021F387 /* SideMenuView.m in Sources */,
+				08A612A32028049B0021F387 /* LoginViewController.m in Sources */,
 				08A612872027F49A0021F387 /* AppDelegate.m in Sources */,
 				08A612982027F49A0021F387 /* main.m in Sources */,
-				08A6128A2027F49A0021F387 /* FirstViewController.m in Sources */,
+				08A6128A2027F49A0021F387 /* DictViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +375,7 @@
 		};
 		08A6129C2027F49A0021F387 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E26749F2065626CC0C7F997 /* Pods-MoodDict.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +390,7 @@
 		};
 		08A6129D2027F49A0021F387 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 097E90B39FE0D274B9462E0D /* Pods-MoodDict.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

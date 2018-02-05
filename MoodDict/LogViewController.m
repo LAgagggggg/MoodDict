@@ -6,13 +6,13 @@
 //  Copyright © 2018 李嘉银. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "LogViewController.h"
 
-@interface SecondViewController ()
+@interface LogViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation LogViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,5 +25,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)PullSideMenu:(id)sender {
+}
 
 @end

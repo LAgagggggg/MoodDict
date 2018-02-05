@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  SecondViewController.h
 //  MoodDict
 //
 //  Created by LAgagggggg on 05/02/2018.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface LogViewController : UIViewController
 
 
 @end
