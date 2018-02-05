@@ -8,13 +8,16 @@
 #define animationDURATION 0.4
 
 #import "DictViewController.h"
+#import "CommonButton.h"
 
 @interface DictViewController ()
 @property(strong,nonatomic)SideMenuView * pullMenuView;
 @property(strong,nonatomic)UIImage * myIcon;
 @property (weak, nonatomic) IBOutlet UINavigationBar *naviBar;
 @property(strong,nonatomic)UIView * mainWrapperView;
+@property(strong, nonatomic) CommonButton * happyBtn;
 @property BOOL loginJudege;
+
 @end
 
 @implementation DictViewController
@@ -25,7 +28,6 @@
     tap.delegate=self;
     [self.tabBarController.view addGestureRecognizer:tap];
     self.mainWrapperView=[[UIView alloc]initWithFrame:self.tabBarController.view.frame];
-    self.mainWrapperView.backgroundColor=[UIColor blackColor];
     [self.tabBarController.view addSubview:self.mainWrapperView];
     self.myIcon=[UIImage imageNamed:@"我的"];
     UITapGestureRecognizer * tapToChooseAvatar=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapToChooseAvatar:)];
@@ -36,6 +38,8 @@
     UIPanGestureRecognizer * pan=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
     [self.pullMenuView addGestureRecognizer:pan];
     [self.pullMenuView.logoutBtn addTarget:self action:@selector(QuitLogin) forControlEvents:UIControlEventTouchUpInside];
+    [self setUpButton];
+    
     
 }
 
@@ -152,10 +156,24 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+-(void)setUpButton{
+    CGSize btnSize = CGSizeMake(130, 66);
+    self.happyBtn = [[CommonButton alloc] init];
+    [self.happyBtn setTitle:@"开心" forState:UIControlStateNormal];
+    [self.view addSubview:self.happyBtn];
+    [self.happyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(btnSize);
+        make.top.equalTo(self.view).with.offset(145);
+        make.left.equalTo(self.view).with.offset(30);
+    }];
+    
+}
+
 -(void)QuitLogin{
     NSUserDefaults * defaults=[NSUserDefaults standardUserDefaults];
     [defaults setBool:NO forKey:@"loginSuccessJudge"];
     self.loginJudege=NO;
     self.pullMenuView.userInteractionEnabled=NO;
 }
+
 @end
