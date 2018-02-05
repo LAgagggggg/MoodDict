@@ -24,18 +24,20 @@
     UITapGestureRecognizer * tap=[[UITapGestureRecognizer alloc]init];//emmm用来取消编辑
     tap.delegate=self;
     [self.tabBarController.view addGestureRecognizer:tap];
-    self.mainWrapperView=[[UIView alloc]initWithFrame:self.view.frame];
-    self.mainWrapperView.backgroundColor=[UIColor whiteColor];
-    [self.view addSubview:self.mainWrapperView];
+    self.mainWrapperView=[[UIView alloc]initWithFrame:self.tabBarController.view.frame];
+    self.mainWrapperView.backgroundColor=[UIColor blackColor];
+    [self.tabBarController.view addSubview:self.mainWrapperView];
     self.myIcon=[UIImage imageNamed:@"我的"];
     UITapGestureRecognizer * tapToChooseAvatar=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapToChooseAvatar:)];
     self.pullMenuView=[[SideMenuView alloc]initWithIcon:self.myIcon andTapGestureRecognizer:tapToChooseAvatar];
+    [self.view bringSubviewToFront:self.mainWrapperView];
+    self.mainWrapperView.alpha=0;
     [self.tabBarController.view addSubview:self.pullMenuView];
     UIPanGestureRecognizer * pan=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
     [self.pullMenuView addGestureRecognizer:pan];
     [self.pullMenuView.logoutBtn addTarget:self action:@selector(QuitLogin) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view sendSubviewToBack:self.pullMenuView];
-    [self.view sendSubviewToBack:self.mainWrapperView];
+
+    
 }
 
 
@@ -92,7 +94,7 @@
     }
     CGFloat dimRatio=0.5+(self.pullMenuView.frame.origin.x/-self.pullMenuView.setedPushWidth)*0.5;
     [UIView animateWithDuration:animationDURATION animations:^{
-        self.tabBarController.view.alpha=dimRatio;
+        self.mainWrapperView.alpha=1-dimRatio;
     }];
     [pan setTranslation:CGPointZero inView:self.pullMenuView];
 }
@@ -104,7 +106,7 @@
         frame.origin.x=-self.pullMenuView.setedPushWidth;
         [UIView animateWithDuration:animationDURATION animations:^{
             self.pullMenuView.frame=frame;
-            self.tabBarController.view.alpha=1;
+            self.mainWrapperView.alpha=0;
         }];
         return YES;
     }
