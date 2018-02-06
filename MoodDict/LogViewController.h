@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "DictViewController.h"
+#import <Masonry.h>
+#import "LogItem.h"
 
-@interface LogViewController : UIViewController
+@interface LogViewController : UIViewController<UIGestureRecognizerDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 
 
 @end
