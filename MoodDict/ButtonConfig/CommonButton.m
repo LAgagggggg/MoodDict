@@ -17,7 +17,6 @@
         [self setUpButton];
     }
     return self;
-    
 }
 
 -(void)setUpButton{

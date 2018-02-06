@@ -6,15 +6,15 @@
 	<string>CoreGraphics</string>
 	<string>WatchKit</string>
 	<string>Security</string>
+	<string>netinet</string>
 	<string>sqlite3</string>
 	<string>netinet6</string>
-	<string>netinet</string>
 	<string>MobileCoreServices</string>
 	<string>AppKit</string>
-	<string>Foundation</string>
 	<string>objc</string>
-	<string>UIKit</string>
 	<string>Cocoa</string>
+	<string>UIKit</string>
+	<string>Foundation</string>
 	<string>SystemConfiguration</string>
 	<string>arpa</string>
 	<string>CoreData</string>
