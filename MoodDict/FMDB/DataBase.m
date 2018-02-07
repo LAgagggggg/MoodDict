@@ -98,6 +98,16 @@ static DataBase * _DBCtl = nil;
     [_db executeUpdate:anxietyKeyword];
     
     [_db close];
+//    [self setUpHappyTable];
+//    [self setUpSorrowTable];
+//    [self setUpEmpathyTable];
+//    [self setUpDisgustTable];
+//    [self setUpPeaceTable];
+//    [self setUpAngerTable];
+//    [self setUpShameTable];
+//    [self setUpInterestTable];
+//    [self setUpFrightenTable];
+//    [self setUpAnxietyTable];
 
 }
 
@@ -216,8 +226,6 @@ static DataBase * _DBCtl = nil;
         [_db executeUpdate:excuteStr, frightenKeywordArray[i]];
     }
     
-
-    
     [_db close];
     
 }
@@ -277,11 +285,10 @@ static DataBase * _DBCtl = nil;
         tempstring = [res stringForColumn:@"keyword"];
         [array addObject:tempstring];
     }
-//    for (int i = 0; i < array.count; i++) {
-//        NSLog(@"%@", array[i]);
-//    }
     [_db close];
-    
+    for (int i = 0; i < array.count; i++) {
+        NSLog(@"%@",array[i]);
+    }
     return array;
 }
 

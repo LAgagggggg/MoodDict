@@ -18,16 +18,7 @@
 		08A612A0202803C40021F387 /* SideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A6129F202803C40021F387 /* SideMenuView.m */; };
 		08A612A32028049B0021F387 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A612A22028049B0021F387 /* LoginViewController.m */; };
 		290B80A72028401400999537 /* CommonButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 290B80A62028401400999537 /* CommonButton.m */; };
-		2924BFAC202995CC00F6A367 /* SorrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924BFAB202995CC00F6A367 /* SorrowViewController.m */; };
-		2924BFAF202995D500F6A367 /* EmpathyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924BFAE202995D500F6A367 /* EmpathyViewController.m */; };
-		2924BFB2202995DC00F6A367 /* DisgustViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924BFB1202995DC00F6A367 /* DisgustViewController.m */; };
-		2924BFB5202995E300F6A367 /* PeaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924BFB4202995E300F6A367 /* PeaceViewController.m */; };
-		2924BFB8202995EB00F6A367 /* AngerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924BFB7202995EB00F6A367 /* AngerViewController.m */; };
-		2924BFBB2029960100F6A367 /* ShameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924BFBA2029960100F6A367 /* ShameViewController.m */; };
-		2924BFBE2029960A00F6A367 /* InterestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924BFBD2029960A00F6A367 /* InterestViewController.m */; };
-		2924BFC12029963300F6A367 /* FrightenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924BFC02029963300F6A367 /* FrightenViewController.m */; };
-		2924BFC42029963B00F6A367 /* AnxietyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924BFC32029963B00F6A367 /* AnxietyViewController.m */; };
-		297D13BF20297BA300F74C01 /* HappyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D13BE20297BA300F74C01 /* HappyViewController.m */; };
+		293CCF65202B93E200C3E338 /* SecondKeywordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 293CCF64202B93E200C3E338 /* SecondKeywordVC.m */; };
 		29FC15092029C4DE00958EC7 /* KeyWordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FC15082029C4DE00958EC7 /* KeyWordButton.m */; };
 		29FC1511202AE1C200958EC7 /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FC1510202AE1C200958EC7 /* DataBase.m */; };
 		29FC1515202B28B000958EC7 /* FirstKeywordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FC1514202B28B000958EC7 /* FirstKeywordViewController.m */; };
@@ -56,26 +47,8 @@
 		097E90B39FE0D274B9462E0D /* Pods-MoodDict.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodDict.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoodDict/Pods-MoodDict.release.xcconfig"; sourceTree = "<group>"; };
 		290B80A52028401400999537 /* CommonButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonButton.h; sourceTree = "<group>"; };
 		290B80A62028401400999537 /* CommonButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonButton.m; sourceTree = "<group>"; };
-		2924BFAA202995CC00F6A367 /* SorrowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SorrowViewController.h; sourceTree = "<group>"; };
-		2924BFAB202995CC00F6A367 /* SorrowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SorrowViewController.m; sourceTree = "<group>"; };
-		2924BFAD202995D500F6A367 /* EmpathyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmpathyViewController.h; sourceTree = "<group>"; };
-		2924BFAE202995D500F6A367 /* EmpathyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmpathyViewController.m; sourceTree = "<group>"; };
-		2924BFB0202995DC00F6A367 /* DisgustViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisgustViewController.h; sourceTree = "<group>"; };
-		2924BFB1202995DC00F6A367 /* DisgustViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisgustViewController.m; sourceTree = "<group>"; };
-		2924BFB3202995E300F6A367 /* PeaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeaceViewController.h; sourceTree = "<group>"; };
-		2924BFB4202995E300F6A367 /* PeaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeaceViewController.m; sourceTree = "<group>"; };
-		2924BFB6202995EB00F6A367 /* AngerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AngerViewController.h; sourceTree = "<group>"; };
-		2924BFB7202995EB00F6A367 /* AngerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AngerViewController.m; sourceTree = "<group>"; };
-		2924BFB92029960100F6A367 /* ShameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShameViewController.h; sourceTree = "<group>"; };
-		2924BFBA2029960100F6A367 /* ShameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShameViewController.m; sourceTree = "<group>"; };
-		2924BFBC2029960A00F6A367 /* InterestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterestViewController.h; sourceTree = "<group>"; };
-		2924BFBD2029960A00F6A367 /* InterestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterestViewController.m; sourceTree = "<group>"; };
-		2924BFBF2029963300F6A367 /* FrightenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrightenViewController.h; sourceTree = "<group>"; };
-		2924BFC02029963300F6A367 /* FrightenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrightenViewController.m; sourceTree = "<group>"; };
-		2924BFC22029963B00F6A367 /* AnxietyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnxietyViewController.h; sourceTree = "<group>"; };
-		2924BFC32029963B00F6A367 /* AnxietyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnxietyViewController.m; sourceTree = "<group>"; };
-		297D13BD20297BA300F74C01 /* HappyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HappyViewController.h; sourceTree = "<group>"; };
-		297D13BE20297BA300F74C01 /* HappyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappyViewController.m; sourceTree = "<group>"; };
+		293CCF63202B93E200C3E338 /* SecondKeywordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondKeywordVC.h; sourceTree = "<group>"; };
+		293CCF64202B93E200C3E338 /* SecondKeywordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondKeywordVC.m; sourceTree = "<group>"; };
 		29FC15072029C4DE00958EC7 /* KeyWordButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyWordButton.h; sourceTree = "<group>"; };
 		29FC15082029C4DE00958EC7 /* KeyWordButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyWordButton.m; sourceTree = "<group>"; };
 		29FC150F202AE1C200958EC7 /* DataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
@@ -107,6 +80,7 @@
 				5F2B4A638C7DF0CC6BEDB508 /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		08A612832027F49A0021F387 /* Products */ = {
 			isa = PBXGroup;
@@ -122,7 +96,6 @@
 				290B80A420283FF000999537 /* ButtonConfig */,
 				29FC1512202B287000958EC7 /* FirstKeywordVC */,
 				29FC150E2029CE9900958EC7 /* FMDB */,
-				297D13BC20297B7100F74C01 /* FirstKeyWordsView */,
 				08A612852027F49A0021F387 /* AppDelegate.h */,
 				08A612862027F49A0021F387 /* AppDelegate.m */,
 				08A612A12028049B0021F387 /* LoginViewController.h */,
@@ -155,33 +128,6 @@
 			path = ButtonConfig;
 			sourceTree = "<group>";
 		};
-		297D13BC20297B7100F74C01 /* FirstKeyWordsView */ = {
-			isa = PBXGroup;
-			children = (
-				297D13BD20297BA300F74C01 /* HappyViewController.h */,
-				297D13BE20297BA300F74C01 /* HappyViewController.m */,
-				2924BFAA202995CC00F6A367 /* SorrowViewController.h */,
-				2924BFAB202995CC00F6A367 /* SorrowViewController.m */,
-				2924BFAD202995D500F6A367 /* EmpathyViewController.h */,
-				2924BFAE202995D500F6A367 /* EmpathyViewController.m */,
-				2924BFB0202995DC00F6A367 /* DisgustViewController.h */,
-				2924BFB1202995DC00F6A367 /* DisgustViewController.m */,
-				2924BFB3202995E300F6A367 /* PeaceViewController.h */,
-				2924BFB4202995E300F6A367 /* PeaceViewController.m */,
-				2924BFB6202995EB00F6A367 /* AngerViewController.h */,
-				2924BFB7202995EB00F6A367 /* AngerViewController.m */,
-				2924BFB92029960100F6A367 /* ShameViewController.h */,
-				2924BFBA2029960100F6A367 /* ShameViewController.m */,
-				2924BFBC2029960A00F6A367 /* InterestViewController.h */,
-				2924BFBD2029960A00F6A367 /* InterestViewController.m */,
-				2924BFBF2029963300F6A367 /* FrightenViewController.h */,
-				2924BFC02029963300F6A367 /* FrightenViewController.m */,
-				2924BFC22029963B00F6A367 /* AnxietyViewController.h */,
-				2924BFC32029963B00F6A367 /* AnxietyViewController.m */,
-			);
-			path = FirstKeyWordsView;
-			sourceTree = "<group>";
-		};
 		29FC150E2029CE9900958EC7 /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +142,8 @@
 			children = (
 				29FC1513202B28B000958EC7 /* FirstKeywordViewController.h */,
 				29FC1514202B28B000958EC7 /* FirstKeywordViewController.m */,
+				293CCF63202B93E200C3E338 /* SecondKeywordVC.h */,
+				293CCF64202B93E200C3E338 /* SecondKeywordVC.m */,
 			);
 			path = FirstKeywordVC;
 			sourceTree = "<group>";
@@ -345,26 +293,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2924BFBE2029960A00F6A367 /* InterestViewController.m in Sources */,
-				2924BFC12029963300F6A367 /* FrightenViewController.m in Sources */,
-				2924BFB2202995DC00F6A367 /* DisgustViewController.m in Sources */,
-				2924BFB8202995EB00F6A367 /* AngerViewController.m in Sources */,
 				08A6128D2027F49A0021F387 /* LogViewController.m in Sources */,
 				29FC1515202B28B000958EC7 /* FirstKeywordViewController.m in Sources */,
-				2924BFB5202995E300F6A367 /* PeaceViewController.m in Sources */,
 				29FC1511202AE1C200958EC7 /* DataBase.m in Sources */,
-				2924BFC42029963B00F6A367 /* AnxietyViewController.m in Sources */,
 				08A612A0202803C40021F387 /* SideMenuView.m in Sources */,
 				088A1BF7202844B30041D19B /* LogItem.m in Sources */,
-				2924BFAC202995CC00F6A367 /* SorrowViewController.m in Sources */,
-				2924BFAF202995D500F6A367 /* EmpathyViewController.m in Sources */,
 				08A612A32028049B0021F387 /* LoginViewController.m in Sources */,
-				297D13BF20297BA300F74C01 /* HappyViewController.m in Sources */,
 				08A612872027F49A0021F387 /* AppDelegate.m in Sources */,
 				08A612982027F49A0021F387 /* main.m in Sources */,
 				29FC15092029C4DE00958EC7 /* KeyWordButton.m in Sources */,
-				2924BFBB2029960100F6A367 /* ShameViewController.m in Sources */,
 				08A6128A2027F49A0021F387 /* DictViewController.m in Sources */,
+				293CCF65202B93E200C3E338 /* SecondKeywordVC.m in Sources */,
 				290B80A72028401400999537 /* CommonButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,10 +440,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LDVXT95SNR;
+				DEVELOPMENT_TEAM = QEVMBLGA8U;
 				INFOPLIST_FILE = MoodDict/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = emmm.MoodDict;
+				PRODUCT_BUNDLE_IDENTIFIER = test.abv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -516,10 +456,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LDVXT95SNR;
+				DEVELOPMENT_TEAM = QEVMBLGA8U;
 				INFOPLIST_FILE = MoodDict/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = emmm.MoodDict;
+				PRODUCT_BUNDLE_IDENTIFIER = test.abv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

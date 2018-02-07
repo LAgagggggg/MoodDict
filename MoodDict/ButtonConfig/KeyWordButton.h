@@ -10,6 +10,8 @@
 
 @interface KeyWordButton : UIButton
 @property  double  location;
+@property(nonatomic, strong) NSString * name;
+
 -(void)autoLocated;
 
 @end

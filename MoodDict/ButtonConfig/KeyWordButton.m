@@ -8,9 +8,9 @@
 
 #import "KeyWordButton.h"
 #import <math.h>
+#import "SecondKeywordVC.h"
 @interface KeyWordButton()<CAAnimationDelegate> // 二级关键词
 
-@property(nonatomic, strong) NSString * name;
 
 @end
 
@@ -22,7 +22,8 @@
     if (self) {
         [self autoLocated];
         [self autoColored];
-//        [self addTarget:self action:@selector(animated) forControlEvents:UIControlEventAllTouchEvents];
+        [self addTarget:self action:@selector(animated) forControlEvents:UIControlEventTouchUpOutside];
+        [self addTarget:self action:@selector(jumpToView) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return self;
@@ -31,7 +32,7 @@
 -(void)autoLocated{
     float x, y, r;
     x = arc4random() % 350;
-    y = arc4random() % 550 + 100;
+    y = arc4random() % 550+70;
     r = arc4random() % 40 + 60;
     if ((x + r * 2) > 375 ) {
         x = (375 - 2 * r);
@@ -53,11 +54,26 @@
         nil;
     }];
 }
+-(void) jumpToView{
+    SecondKeywordVC * secondVC = [[SecondKeywordVC alloc] init];
+    [secondVC setNameOfBar:self.name];
+    id responder = self.nextResponder;
+    while (![responder isKindOfClass: [UIViewController class]] && ![responder isKindOfClass: [UIWindow class]])
+    {
+        responder = [responder nextResponder];
+    }
+    if ([responder isKindOfClass: [UIViewController class]])
+    {
+        [responder presentViewController:secondVC animated:YES completion:nil];
+    }
+    
+}
 -(void)autoColored{
     float red,green,blue;
     red = (arc4random() % 100)/100.0;
     green = (arc4random() % 100)/100.0;
     blue = (arc4random() % 100)/100.0;
+
     [self setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:0.3]];
 }
 

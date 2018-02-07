@@ -60,7 +60,6 @@
     [backBtn addTarget:self action:@selector(btnPressed) forControlEvents:UIControlEventTouchUpInside];
     
     self.naviBarTitle.leftBarButtonItem = item;
-    
 
 }
 
@@ -72,17 +71,15 @@
     self.dataArr = [[DataBase sharedDataBase] setFirstKeyword:self.name];
 }
 -(void)KeywordButtonInit{
-    double location[self.dataArr.count];
     for ( int i = 0; i < self.dataArr.count; i++) {
         KeyWordButton * btn = [[KeyWordButton alloc] init];
-        location[i] = btn.location;
-
+        [btn setName:self.dataArr[i]];
         [btn setTitle:self.dataArr[i] forState:UIControlStateNormal];
+        
         [self.view addSubview:btn];
         
     }
-    self.test = [[KeyWordButton alloc] init];
-    [self.view addSubview:self.test];
+
 }
 -(void)animated{
 
