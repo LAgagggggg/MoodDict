@@ -29,7 +29,6 @@
 		2924BFC42029963B00F6A367 /* AnxietyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2924BFC32029963B00F6A367 /* AnxietyViewController.m */; };
 		297D13BF20297BA300F74C01 /* HappyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D13BE20297BA300F74C01 /* HappyViewController.m */; };
 		29FC15092029C4DE00958EC7 /* KeyWordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FC15082029C4DE00958EC7 /* KeyWordButton.m */; };
-		29FC150D2029CCBC00958EC7 /* Keywrod.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29FC150C2029CCBC00958EC7 /* Keywrod.plist */; };
 		29FC1511202AE1C200958EC7 /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FC1510202AE1C200958EC7 /* DataBase.m */; };
 		29FC1515202B28B000958EC7 /* FirstKeywordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FC1514202B28B000958EC7 /* FirstKeywordViewController.m */; };
 		BA0A1B40EB00A07C4F8FFB94 /* libPods-MoodDict.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C6A6EAF69670C3190AA2F9 /* libPods-MoodDict.a */; };
@@ -79,7 +78,6 @@
 		297D13BE20297BA300F74C01 /* HappyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappyViewController.m; sourceTree = "<group>"; };
 		29FC15072029C4DE00958EC7 /* KeyWordButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyWordButton.h; sourceTree = "<group>"; };
 		29FC15082029C4DE00958EC7 /* KeyWordButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyWordButton.m; sourceTree = "<group>"; };
-		29FC150C2029CCBC00958EC7 /* Keywrod.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keywrod.plist; sourceTree = "<group>"; };
 		29FC150F202AE1C200958EC7 /* DataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
 		29FC1510202AE1C200958EC7 /* DataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataBase.m; sourceTree = "<group>"; };
 		29FC1513202B28B000958EC7 /* FirstKeywordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstKeywordViewController.h; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 				08A612932027F49A0021F387 /* LaunchScreen.storyboard */,
 				08A612962027F49A0021F387 /* Info.plist */,
 				08A612972027F49A0021F387 /* main.m */,
-				29FC150C2029CCBC00958EC7 /* Keywrod.plist */,
 			);
 			path = MoodDict;
 			sourceTree = "<group>";
@@ -281,7 +278,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29FC150D2029CCBC00958EC7 /* Keywrod.plist in Resources */,
 				08A612952027F49A0021F387 /* LaunchScreen.storyboard in Resources */,
 				08A612922027F49A0021F387 /* Assets.xcassets in Resources */,
 				08A612902027F49A0021F387 /* Main.storyboard in Resources */,
