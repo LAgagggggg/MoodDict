@@ -22,4 +22,16 @@
     [coder encodeObject:self.content forKey:@"content"];
     [coder encodeInt:self.mood forKey:@"mood"];
 }
+
+-(BOOL)isLogToday{
+    NSDate * today=[[NSDate alloc]init];
+    NSString * todayString=[[today description] substringToIndex:10];
+    NSString * dateString=[[self.createdDate description]substringToIndex:10];
+    if ([dateString isEqualToString:todayString]) {
+        return YES;
+    }
+    else{
+        return NO;
+    }
+}
 @end

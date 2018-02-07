@@ -7,6 +7,7 @@
 //
 #define lightBlueColor [UIColor colorWithRed:108/255. green:227/255. blue:228/255. alpha:1]
 #define animationDURATION 0.4
+#define pointInterval 30
 
 char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒","焦虑","恐惧","悲伤","羞愧"};
 
@@ -22,6 +23,9 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
 @property(strong,nonatomic) UIButton * checkBtn;
 @property(strong,nonatomic) UITextView * inputView;
 @property(strong,nonatomic) UIPickerView * pickV;
+@property(strong,nonatomic) ShowMoodView * showMood;
+@property(strong,nonatomic) UILabel * dateShower;
+@property NSInteger selectedRow;
 @end
 
 @implementation LogViewController
@@ -32,12 +36,19 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
         self.archiverPath=[documentPath stringByAppendingPathComponent:@"MoodData.data"];
         NSFileManager *fileManager = [NSFileManager defaultManager];
         if([fileManager fileExistsAtPath:self.archiverPath]){
-            NSLog(@"file detected");
             _logItemArr=[NSKeyedUnarchiver unarchiveObjectWithFile:self.archiverPath];
         }
         else{
             _logItemArr=[[NSMutableArray alloc]init];
         }
+//        _logItemArr=[[NSMutableArray alloc]init];
+//        for (int i=0; i<=10; i++) {
+//            LogItem * item=[[LogItem alloc]init];
+//            item.createdDate=[NSDate date];
+//            item.mood=arc4random()%10;
+//            item.content=[NSString stringWithFormat:@"%d%d%d",i,i,i];
+//            [_logItemArr addObject:item];
+//        }
     }
     return  _logItemArr;
 }
@@ -58,7 +69,19 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
         make.top.equalTo(self.view.mas_top).with.offset(64);
         make.height.equalTo(@(250));
     }];
-    self.graphView.backgroundColor=[UIColor darkGrayColor];
+    self.graphView.scrollEnabled=YES;
+    self.graphView.backgroundColor=[UIColor lightGrayColor];
+    self.graphView.delegate=self;
+    self.graphView.showsVerticalScrollIndicator=NO;
+    self.graphView.showsHorizontalScrollIndicator=NO;
+    self.graphView.bounces=NO;
+    [self.view layoutIfNeeded];
+    [self drawGraph];
+    //指示器
+    UIView * indicatorView=[[UIView alloc]initWithFrame:CGRectMake(self.graphView.frame.size.width/2-1, self.graphView.frame.origin.y, 2, self.graphView.frame.size.height)];
+    indicatorView.backgroundColor=[UIColor darkGrayColor];
+    [self.view addSubview:indicatorView];
+    indicatorView.alpha=0.5;
     //下方编辑区域
     self.displayView=[[UIView alloc]init];
     [self.view addSubview:self.displayView];
@@ -85,7 +108,7 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
     //添加文本框
     self.inputView=[[UITextView alloc]init];
     [self.displayView addSubview:self.inputView];
-    [self.inputView setFont:[UIFont systemFontOfSize:15]];
+    [self.inputView setFont:[UIFont systemFontOfSize:16 weight:UIFontWeightMedium]];
     [self.inputView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.displayView.mas_left).with.offset(20);
         make.right.equalTo(self.displayView.mas_right).with.offset(-20);
@@ -107,6 +130,44 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
         make.bottom.equalTo(self.displayView.mas_bottom).with.offset(-10);
     }];
     self.pickV.alpha=0;
+    //日期显示
+    self.dateShower=[[UILabel alloc]init];
+    self.dateShower.backgroundColor=[UIColor lightGrayColor];
+    self.dateShower.textAlignment=UITextAlignmentCenter;
+    self.dateShower.layer.cornerRadius=10.f;
+    self.dateShower.layer.masksToBounds=YES;
+    [self.dateShower setFont:[UIFont systemFontOfSize:18.f weight:UIFontWeightBold]];
+    [self.view addSubview:self.dateShower];
+    [self.dateShower mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.graphView.mas_centerX);
+        make.top.equalTo(self.graphView.mas_bottom).with.offset(10);
+        make.height.equalTo(@(40));
+        make.width.equalTo(@(80));
+    }];
+    self.dateShower.alpha=0;
+    //设置显示当天的日志
+    if ([self.logItemArr lastObject]) {
+        if ([[self.logItemArr lastObject] isLogToday]) {
+            self.addBtn.alpha=0;
+            [self displayLogItem:[self.logItemArr lastObject]];
+            [self.inputView setHidden:NO];
+        }
+    }
+}
+
+-(void)drawGraph{
+    self.showMood=[[ShowMoodView alloc]initWithFrame:CGRectMake(self.graphView.frame.size.width/2-5, 0, pointInterval*(self.logItemArr.count-1)+10, self.graphView.frame.size.height)];
+    [self.showMood DrawWithArr:self.logItemArr];
+    self.showMood.backgroundColor=[UIColor clearColor];
+    [self.graphView addSubview:self.showMood];
+    CGSize size=self.graphView.frame.size;
+    size.width+=self.showMood.frame.size.width;
+    self.graphView.contentSize=size;
+    [self.graphView setContentOffset:CGPointMake(self.showMood.frame.size.width-10, 0)];
+}
+
+-(void)displayLogItem:(LogItem *)item{
+    self.inputView.text=item.content;
 }
 
 -(void)addLog{
@@ -125,6 +186,8 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
         make.width.equalTo(@(40));
         make.height.equalTo(self.checkBtn.mas_width);
     }];
+    LogItem * item=[[LogItem alloc]init];
+    [self.logItemArr addObject:item];
 //    [self.inputView setHidden: NO];
 }
 
@@ -135,18 +198,33 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
     [self.inputView setHidden:NO];
     [self.inputView becomeFirstResponder];
     [self.checkBtn removeFromSuperview];
+    [self.logItemArr lastObject].mood=(int)self.selectedRow;
 }
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
     //设置注销输入
-    if(![touch.view isDescendantOfView:self.displayView]){
-        [self.inputView resignFirstResponder];
-        [self.inputView setHidden:YES];
-        [UIView animateWithDuration:animationDURATION animations:^{
-            self.addBtn.alpha=1;
-            self.pickV.alpha=0;
-        }];
+    if ([self.inputView isFirstResponder]||self.pickV.alpha==1) {
+        if(![touch.view isDescendantOfView:self.displayView]){
+            if ([self.inputView isFirstResponder]&&self.inputView.text.length) {
+                [self.logItemArr lastObject].content=self.inputView.text;
+                [self.logItemArr lastObject].createdDate=[NSDate date];
+                [self.inputView resignFirstResponder];
+                [self saveData];
+                [self.showMood removeFromSuperview];
+                [self drawGraph];
+            }
+            else{
+                [self.inputView resignFirstResponder];
+                [self.inputView setHidden:YES];
+                [UIView animateWithDuration:animationDURATION animations:^{
+                    self.addBtn.alpha=1;
+                    self.pickV.alpha=0;
+                    [self.checkBtn removeFromSuperview];
+                }];
+            }
+        }
     }
+    
     return NO;
 }
 
@@ -175,7 +253,33 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
     return title;
 }
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    NSLog(@"%ld",row);
+    self.selectedRow=row;
+}
+//趋势图
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if (self.logItemArr.count) {
+        int offset=(int)scrollView.contentOffset.x;
+        offset=(offset+pointInterval/2)/pointInterval;
+        [self displayLogItem:self.logItemArr[offset]];
+        [UIView animateWithDuration:animationDURATION animations:^{
+            self.dateShower.alpha=1;
+        }];
+        NSString * dateString=[[self.logItemArr[offset].createdDate description] substringWithRange:NSMakeRange(5, 5)];
+        self.dateShower.text=dateString;
+        
+    }
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    int offset=(int)scrollView.contentOffset.x;
+    offset=(offset+pointInterval/2)/pointInterval;
+    offset*=pointInterval;
+    CGPoint point=scrollView.contentOffset;
+    point.x=offset;
+    [UIView animateWithDuration:animationDURATION animations:^{
+        scrollView.contentOffset=point;
+        self.dateShower.alpha=0;
+    }];
 }
 
 @end

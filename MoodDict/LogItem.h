@@ -15,4 +15,5 @@ enum Mood{shame=0,sad,fear,anxious,angry,disgust,peace,sympathize,interested,del
 @property enum Mood mood;
 -(instancetype)initWithCoder:(NSCoder *)aDecoder;
 -(void)encodeWithCoder:(NSCoder *)aCoder;
+-(BOOL)isLogToday;
 @end

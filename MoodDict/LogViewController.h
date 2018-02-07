@@ -10,8 +10,9 @@
 #import "DictViewController.h"
 #import <Masonry.h>
 #import "LogItem.h"
+#import "ShowMoodView.h"
 
-@interface LogViewController : UIViewController<UIGestureRecognizerDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
+@interface LogViewController : UIViewController<UIGestureRecognizerDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIScrollViewDelegate>
 
 
 @end
