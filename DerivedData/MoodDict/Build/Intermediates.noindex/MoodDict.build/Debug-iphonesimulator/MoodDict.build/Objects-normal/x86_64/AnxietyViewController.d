@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWords/AnxietyViewController.m \
-  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWords/AnxietyViewController.h
+  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWordsView/AnxietyViewController.m \
+  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWordsView/AnxietyViewController.h

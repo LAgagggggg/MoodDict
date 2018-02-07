@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWords/AngerViewController.m \
-  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWords/AngerViewController.h
+  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWordsView/AngerViewController.m \
+  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWordsView/AngerViewController.h

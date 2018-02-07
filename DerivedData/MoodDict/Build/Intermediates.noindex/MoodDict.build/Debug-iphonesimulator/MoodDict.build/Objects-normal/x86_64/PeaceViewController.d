@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWords/PeaceViewController.m \
-  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWords/PeaceViewController.h
+  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWordsView/PeaceViewController.m \
+  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWordsView/PeaceViewController.h

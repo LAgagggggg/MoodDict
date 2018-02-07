@@ -7,8 +7,8 @@
 	<string>WatchKit</string>
 	<string>Security</string>
 	<string>netinet</string>
-	<string>sqlite3</string>
 	<string>netinet6</string>
+	<string>sqlite3</string>
 	<string>MobileCoreServices</string>
 	<string>AppKit</string>
 	<string>objc</string>

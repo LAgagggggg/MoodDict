@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWords/DisgustViewController.m \
-  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWords/DisgustViewController.h
+  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWordsView/DisgustViewController.m \
+  /Users/apple/Desktop/MoodDict/MoodDict/FirstKeyWordsView/DisgustViewController.h

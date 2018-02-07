@@ -20,16 +20,10 @@
 
 #import "DictViewController.h"
 #import "CommonButton.h"
-#import "HappyViewController.h"
-#import "SorrowViewController.h"
-#import "EmpathyViewController.h"
-#import "DisgustViewController.h"
-#import "PeaceViewController.h"
-#import "AngerViewController.h"
-#import "ShameViewController.h"
-#import "InterestViewController.h"
-#import "FrightenViewController.h"
-#import "AnxietyViewController.h"
+#import "FirstKeywordViewController.h"
+
+#import "DataBase.h"
+
 @interface DictViewController ()
 @property(strong,nonatomic)SideMenuView * pullMenuView;
 @property(strong,nonatomic)UIImage * myIcon;
@@ -47,7 +41,9 @@
 @property(strong, nonatomic) CommonButton * frightenBtn;
 @property(strong, nonatomic) CommonButton * anxietyBtn;
 
+
 @property BOOL loginJudege;
+
 
 @end
 
@@ -191,7 +187,8 @@
     CGSize btnSize = CGSizeMake(BUTTON_WIDTH_FACTOR * Screen_Width, BUTTON_HEIGHT_FACTOR * Screen_Height);
     
     self.happyBtn = [[CommonButton alloc] init];
-    [self.happyBtn setTitle:@"快乐" forState:UIControlStateNormal];
+    self.happyBtn.keyword = @"快乐";
+    [self.happyBtn setTitle:self.happyBtn.keyword forState:UIControlStateNormal];
     [self.view addSubview:self.happyBtn];
     [self.happyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(btnSize);
@@ -200,7 +197,8 @@
     }];
     
     self.sorrowBtn = [[CommonButton alloc] init];
-    [self.sorrowBtn setTitle:@"悲伤" forState:UIControlStateNormal];
+    self.sorrowBtn.keyword = @"悲伤";
+    [self.sorrowBtn setTitle:self.sorrowBtn.keyword  forState:UIControlStateNormal];
     [self.view addSubview:self.sorrowBtn];
     [self.sorrowBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(btnSize);
@@ -209,7 +207,8 @@
     }];
     
     self.empathyBtn = [[CommonButton alloc] init];
-    [self.empathyBtn setTitle:@"共情" forState:UIControlStateNormal];
+    self.empathyBtn.keyword = @"共情";
+    [self.empathyBtn setTitle:self.empathyBtn.keyword forState:UIControlStateNormal];
     [self.view addSubview:self.empathyBtn];
     [self.empathyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(btnSize);
@@ -218,7 +217,8 @@
     }];
     
     self.disgustBtn = [[CommonButton alloc] init];
-    [self.disgustBtn setTitle:@"厌恶" forState:UIControlStateNormal];
+    self.disgustBtn.keyword = @"厌恶";
+    [self.disgustBtn setTitle:self.disgustBtn.keyword forState:UIControlStateNormal];
     [self.view addSubview:self.disgustBtn];
     [self.disgustBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(btnSize);
@@ -227,7 +227,8 @@
     }];
     
     self.peaceBtn = [[CommonButton alloc] init];
-    [self.peaceBtn setTitle:@"平静" forState:UIControlStateNormal];
+    self.peaceBtn.keyword = @"平静";
+    [self.peaceBtn setTitle:self.peaceBtn.keyword forState:UIControlStateNormal];
     [self.view addSubview:self.peaceBtn];
     [self.peaceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(btnSize);
@@ -237,7 +238,8 @@
     }];
     
     self.angerBtn = [[CommonButton alloc] init];
-    [self.angerBtn setTitle:@"愤怒" forState:UIControlStateNormal];
+    self.angerBtn.keyword = @"愤怒";
+    [self.angerBtn setTitle:self.angerBtn.keyword forState:UIControlStateNormal];
     [self.view addSubview:self.angerBtn];
     [self.angerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(btnSize);
@@ -246,7 +248,8 @@
     }];
     
     self.shameBtn = [[CommonButton alloc] init];
-    [self.shameBtn setTitle:@"羞愧" forState:UIControlStateNormal];
+    self.shameBtn.keyword = @"羞愧";
+    [self.shameBtn setTitle:self.shameBtn.keyword forState:UIControlStateNormal];
     [self.view addSubview:self.shameBtn];
     [self.shameBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(btnSize);
@@ -255,7 +258,8 @@
     }];
     
     self.interestBtn = [[CommonButton alloc] init];
-    [self.interestBtn setTitle:@"兴趣" forState:UIControlStateNormal];
+    self.interestBtn.keyword = @"兴趣";
+    [self.interestBtn setTitle:self.interestBtn.keyword forState:UIControlStateNormal];
     [self.view addSubview:self.interestBtn];
     [self.interestBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(btnSize);
@@ -264,7 +268,8 @@
     }];
     
     self.frightenBtn = [[CommonButton alloc] init];
-    [self.frightenBtn setTitle:@"恐惧" forState:UIControlStateNormal];
+    self.frightenBtn.keyword = @"恐惧";
+    [self.frightenBtn setTitle:self.frightenBtn.keyword forState:UIControlStateNormal];
     [self.view addSubview:self.frightenBtn];
     [self.frightenBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(btnSize);
@@ -273,74 +278,15 @@
     }];
     
     self.anxietyBtn = [[CommonButton alloc] init];
-    [self.anxietyBtn setTitle:@"焦虑" forState:UIControlStateNormal];
+    self.anxietyBtn.keyword = @"焦虑";
+    [self.anxietyBtn setTitle:self.anxietyBtn.keyword forState:UIControlStateNormal];
     [self.view addSubview:self.anxietyBtn];
     [self.anxietyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(btnSize);
         make.right.equalTo(self.view).with.offset(BUTTON_RIGHT_FACTOR * Screen_Width);
         make.top.equalTo(self.shameBtn).with.offset(88);
     }];
-    
-    [self.happyBtn addTarget:self action:@selector(clickHappyBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self.sorrowBtn addTarget:self action:@selector(clickSorrowBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self.empathyBtn addTarget:self action:@selector(clickEmpathyBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self.disgustBtn addTarget:self action:@selector(clickDisgustBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self.peaceBtn addTarget:self action:@selector(clickPeaceBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self.angerBtn addTarget:self action:@selector(clickAngerBtn) forControlEvents:UIControlEventTouchUpInside ];
-    [self.shameBtn addTarget:self action:@selector(clickShameBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self.interestBtn addTarget:self action:@selector(clickInterestBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self.frightenBtn addTarget:self action:@selector(clickFrightenBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self.anxietyBtn addTarget: self action:@selector(clickAnxietyBtn) forControlEvents:UIControlEventTouchUpInside];
-    
-}
-
--(void)clickHappyBtn{
-    HappyViewController * happyVC = [[HappyViewController alloc] init];
-    [self presentViewController:happyVC animated:YES completion:nil];
-}
--(void)clickSorrowBtn{
-    SorrowViewController * sorrowVC = [[SorrowViewController alloc] init];
-    [self presentViewController:sorrowVC animated:YES completion:nil];
-}
-
--(void)clickEmpathyBtn{
-    EmpathyViewController * empathyVC = [[EmpathyViewController alloc] init];
-    [self presentViewController:empathyVC animated:YES completion:nil];
-}
-
--(void)clickDisgustBtn{
-    DisgustViewController * disgustVC  = [[DisgustViewController alloc] init];
-    [self presentViewController:disgustVC animated:YES completion:nil];
-}
-
--(void) clickPeaceBtn{
-    PeaceViewController * peaceVC = [[PeaceViewController alloc] init];
-    [self presentViewController:peaceVC animated:YES completion:nil];
-}
-
--(void)clickAngerBtn{
-    AngerViewController * angerVC = [[AngerViewController alloc] init];
-    [self presentViewController:angerVC animated:YES completion:nil];
-}
-
--(void)clickShameBtn{
-    ShameViewController * shameVC = [[ShameViewController alloc] init];
-    [self presentViewController:shameVC animated:YES completion:nil];
-}
-
--(void)clickInterestBtn{
-    InterestViewController * interestVC = [[InterestViewController alloc] init];
-    [self presentViewController:interestVC animated:YES completion:nil];
-}
-
--(void)clickFrightenBtn{
-    FrightenViewController * frightenVC = [[FrightenViewController alloc] init];
-    [self presentViewController:frightenVC animated:YES completion:nil];
-    
-}
--(void)clickAnxietyBtn{
-    AnxietyViewController * anxietyVC = [[AnxietyViewController alloc] init];
-    [self presentViewController:anxietyVC animated:YES completion:nil];
+        
 }
 
 
