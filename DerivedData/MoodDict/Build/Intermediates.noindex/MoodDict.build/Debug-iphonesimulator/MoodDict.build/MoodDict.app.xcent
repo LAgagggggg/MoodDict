@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>LDVXT95SNR.emmm.MoodDict</string>
+	<string>QEVMBLGA8U.test.abv</string>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>LDVXT95SNR.emmm.MoodDict</string>
+		<string>QEVMBLGA8U.test.abv</string>
 	</array>
 </dict>
 </plist>

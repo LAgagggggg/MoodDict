@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>happy</key>
+	<dict>
+		<key>1</key>
+		<string>以子为荣</string>
+        
+		<key>2</key>
+		<string>撒娇依赖</string>
+        
+        <key>3</key>
+        <string>幸灾乐祸</string>
+        
+        <key>4</key>
+        <string>自豪</string>
+        
+        <key>5</key>
+        <string>欢乐</string>
+        
+        <key>6</key>
+        <string>无忧无虑</string>
+        
+        <key>7</key>
+        <string>恋爱情结</string>
+        
+        <key>8</key>
+        <string>满意</string>
+        
+        <key>9</key>
+        <string>勇气</string>
+        
+        <key>10</key>
+        <string>自信</string>
+        
+        
+	</dict>
+	<key>sorrow</key>
+	<dict/>
+	<key>empathy</key>
+	<dict/>
+	<key>disgust</key>
+	<dict/>
+	<key>peace</key>
+	<dict/>
+	<key>anger</key>
+	<dict/>
+	<key>shame</key>
+	<dict/>
+	<key>interest</key>
+	<dict/>
+	<key>frighten</key>
+	<dict/>
+	<key>anxiety</key>
+	<dict/>
+</dict>
+</plist>

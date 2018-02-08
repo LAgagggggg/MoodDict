@@ -6,17 +6,44 @@
 //  Copyright © 2018 李嘉银. All rights reserved.
 //
 #define animationDURATION 0.4
+#define Screen_Width [UIScreen mainScreen].bounds.size.width
+#define Screen_Height [UIScreen mainScreen].bounds.size.height
+
+#define BUTTON_LEFT_FACTOR 30/[UIScreen mainScreen].bounds.size.width
+#define BUTTON_TOP_FACTOR 145/[UIScreen mainScreen].bounds.size.height
+#define BUTTON_RIGHT_FACTOR -30/[UIScreen mainScreen].bounds.size.width
+
+
+#define BUTTON_WIDTH_FACTOR 130/[UIScreen mainScreen].bounds.size.width
+#define BUTTON_HEIGHT_FACTOR 66/[UIScreen mainScreen].bounds.size.height
+
 
 #import "DictViewController.h"
 #import "CommonButton.h"
+#import "FirstKeywordViewController.h"
+
+#import "DataBase.h"
 
 @interface DictViewController ()
 @property(strong,nonatomic)SideMenuView * pullMenuView;
 @property(strong,nonatomic)UIImage * myIcon;
 @property (weak, nonatomic) IBOutlet UINavigationBar *naviBar;
 @property(strong,nonatomic)UIView * mainWrapperView;
+
 @property(strong, nonatomic) CommonButton * happyBtn;
+@property(strong, nonatomic) CommonButton * sorrowBtn;
+@property(strong, nonatomic) CommonButton * empathyBtn;
+@property(strong, nonatomic) CommonButton * disgustBtn;
+@property(strong, nonatomic) CommonButton * peaceBtn;
+@property(strong, nonatomic) CommonButton * angerBtn;
+@property(strong, nonatomic) CommonButton * shameBtn;
+@property(strong, nonatomic) CommonButton * interestBtn;
+@property(strong, nonatomic) CommonButton * frightenBtn;
+@property(strong, nonatomic) CommonButton * anxietyBtn;
+
+
 @property BOOL loginJudege;
+
 
 @end
 
@@ -39,8 +66,8 @@
     [self.pullMenuView addGestureRecognizer:pan];
     [self.pullMenuView.logoutBtn addTarget:self action:@selector(QuitLogin) forControlEvents:UIControlEventTouchUpInside];
     [self setUpButton];
-    
-    
+
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -156,18 +183,112 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
--(void)setUpButton{
-    CGSize btnSize = CGSizeMake(130, 66);
+-(void) setUpButton{
+    CGSize btnSize = CGSizeMake(BUTTON_WIDTH_FACTOR * Screen_Width, BUTTON_HEIGHT_FACTOR * Screen_Height);
+    
     self.happyBtn = [[CommonButton alloc] init];
-    [self.happyBtn setTitle:@"开心" forState:UIControlStateNormal];
+    self.happyBtn.keyword = @"快乐";
+    [self.happyBtn setTitle:self.happyBtn.keyword forState:UIControlStateNormal];
     [self.view addSubview:self.happyBtn];
     [self.happyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(btnSize);
-        make.top.equalTo(self.view).with.offset(145);
-        make.left.equalTo(self.view).with.offset(30);
+        make.top.equalTo(self.view).with.offset(BUTTON_TOP_FACTOR * Screen_Height);
+        make.left.equalTo(self.view).with.offset(BUTTON_LEFT_FACTOR * Screen_Width);
     }];
     
+    self.sorrowBtn = [[CommonButton alloc] init];
+    self.sorrowBtn.keyword = @"悲伤";
+    [self.sorrowBtn setTitle:self.sorrowBtn.keyword  forState:UIControlStateNormal];
+    [self.view addSubview:self.sorrowBtn];
+    [self.sorrowBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(btnSize);
+        make.top.equalTo(self.view).with.offset(BUTTON_TOP_FACTOR * Screen_Height);
+        make.right.equalTo(self.view).with.offset(BUTTON_RIGHT_FACTOR * Screen_Width);
+    }];
+    
+    self.empathyBtn = [[CommonButton alloc] init];
+    self.empathyBtn.keyword = @"共情";
+    [self.empathyBtn setTitle:self.empathyBtn.keyword forState:UIControlStateNormal];
+    [self.view addSubview:self.empathyBtn];
+    [self.empathyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(btnSize);
+        make.top.equalTo(self.happyBtn).with.offset(88);
+        make.left.equalTo(self.view).with.offset(BUTTON_LEFT_FACTOR * Screen_Width);
+    }];
+    
+    self.disgustBtn = [[CommonButton alloc] init];
+    self.disgustBtn.keyword = @"厌恶";
+    [self.disgustBtn setTitle:self.disgustBtn.keyword forState:UIControlStateNormal];
+    [self.view addSubview:self.disgustBtn];
+    [self.disgustBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(btnSize);
+        make.right.equalTo(self.view).with.offset(BUTTON_RIGHT_FACTOR * Screen_Width);
+        make.top.equalTo(self.happyBtn).with.offset(88);
+    }];
+    
+    self.peaceBtn = [[CommonButton alloc] init];
+    self.peaceBtn.keyword = @"平静";
+    [self.peaceBtn setTitle:self.peaceBtn.keyword forState:UIControlStateNormal];
+    [self.view addSubview:self.peaceBtn];
+    [self.peaceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(btnSize);
+        make.left.equalTo(self.view).with.offset(BUTTON_LEFT_FACTOR * Screen_Width);
+        make.top.equalTo(self.empathyBtn).with.offset(88);
+        
+    }];
+    
+    self.angerBtn = [[CommonButton alloc] init];
+    self.angerBtn.keyword = @"愤怒";
+    [self.angerBtn setTitle:self.angerBtn.keyword forState:UIControlStateNormal];
+    [self.view addSubview:self.angerBtn];
+    [self.angerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(btnSize);
+        make.right.equalTo(self.view).with.offset(BUTTON_RIGHT_FACTOR * Screen_Width);
+        make.top.equalTo(self.empathyBtn).with.offset(88);
+    }];
+    
+    self.shameBtn = [[CommonButton alloc] init];
+    self.shameBtn.keyword = @"羞愧";
+    [self.shameBtn setTitle:self.shameBtn.keyword forState:UIControlStateNormal];
+    [self.view addSubview:self.shameBtn];
+    [self.shameBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(btnSize);
+        make.left.equalTo(self.view).with.offset(BUTTON_LEFT_FACTOR * Screen_Width);
+        make.top.equalTo(self.angerBtn).with.offset(88);
+    }];
+    
+    self.interestBtn = [[CommonButton alloc] init];
+    self.interestBtn.keyword = @"兴趣";
+    [self.interestBtn setTitle:self.interestBtn.keyword forState:UIControlStateNormal];
+    [self.view addSubview:self.interestBtn];
+    [self.interestBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(btnSize);
+        make.right.equalTo(self.view).with.offset(BUTTON_RIGHT_FACTOR * Screen_Width);
+        make.top.equalTo(self.angerBtn).with.offset(88);
+    }];
+    
+    self.frightenBtn = [[CommonButton alloc] init];
+    self.frightenBtn.keyword = @"恐惧";
+    [self.frightenBtn setTitle:self.frightenBtn.keyword forState:UIControlStateNormal];
+    [self.view addSubview:self.frightenBtn];
+    [self.frightenBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(btnSize);
+        make.left.equalTo(self.view).with.offset(BUTTON_LEFT_FACTOR * Screen_Width);
+        make.top.equalTo(self.shameBtn).with.offset(88);
+    }];
+    
+    self.anxietyBtn = [[CommonButton alloc] init];
+    self.anxietyBtn.keyword = @"焦虑";
+    [self.anxietyBtn setTitle:self.anxietyBtn.keyword forState:UIControlStateNormal];
+    [self.view addSubview:self.anxietyBtn];
+    [self.anxietyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(btnSize);
+        make.right.equalTo(self.view).with.offset(BUTTON_RIGHT_FACTOR * Screen_Width);
+        make.top.equalTo(self.shameBtn).with.offset(88);
+    }];
+        
 }
+
 
 -(void)QuitLogin{
     NSUserDefaults * defaults=[NSUserDefaults standardUserDefaults];

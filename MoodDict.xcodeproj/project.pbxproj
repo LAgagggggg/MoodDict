@@ -19,6 +19,10 @@
 		08A612A32028049B0021F387 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A612A22028049B0021F387 /* LoginViewController.m */; };
 		08B7D6B4202B0624000F373B /* ShowMoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B7D6B3202B0624000F373B /* ShowMoodView.m */; };
 		290B80A72028401400999537 /* CommonButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 290B80A62028401400999537 /* CommonButton.m */; };
+		293CCF65202B93E200C3E338 /* SecondKeywordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 293CCF64202B93E200C3E338 /* SecondKeywordVC.m */; };
+		29FC15092029C4DE00958EC7 /* KeyWordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FC15082029C4DE00958EC7 /* KeyWordButton.m */; };
+		29FC1511202AE1C200958EC7 /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FC1510202AE1C200958EC7 /* DataBase.m */; };
+		29FC1515202B28B000958EC7 /* FirstKeywordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FC1514202B28B000958EC7 /* FirstKeywordViewController.m */; };
 		BA0A1B40EB00A07C4F8FFB94 /* libPods-MoodDict.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C6A6EAF69670C3190AA2F9 /* libPods-MoodDict.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +50,14 @@
 		097E90B39FE0D274B9462E0D /* Pods-MoodDict.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodDict.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoodDict/Pods-MoodDict.release.xcconfig"; sourceTree = "<group>"; };
 		290B80A52028401400999537 /* CommonButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonButton.h; sourceTree = "<group>"; };
 		290B80A62028401400999537 /* CommonButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonButton.m; sourceTree = "<group>"; };
+		293CCF63202B93E200C3E338 /* SecondKeywordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondKeywordVC.h; sourceTree = "<group>"; };
+		293CCF64202B93E200C3E338 /* SecondKeywordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondKeywordVC.m; sourceTree = "<group>"; };
+		29FC15072029C4DE00958EC7 /* KeyWordButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyWordButton.h; sourceTree = "<group>"; };
+		29FC15082029C4DE00958EC7 /* KeyWordButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyWordButton.m; sourceTree = "<group>"; };
+		29FC150F202AE1C200958EC7 /* DataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
+		29FC1510202AE1C200958EC7 /* DataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataBase.m; sourceTree = "<group>"; };
+		29FC1513202B28B000958EC7 /* FirstKeywordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstKeywordViewController.h; sourceTree = "<group>"; };
+		29FC1514202B28B000958EC7 /* FirstKeywordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstKeywordViewController.m; sourceTree = "<group>"; };
 		4E26749F2065626CC0C7F997 /* Pods-MoodDict.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodDict.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoodDict/Pods-MoodDict.debug.xcconfig"; sourceTree = "<group>"; };
 		74C6A6EAF69670C3190AA2F9 /* libPods-MoodDict.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoodDict.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -71,6 +83,7 @@
 				5F2B4A638C7DF0CC6BEDB508 /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		08A612832027F49A0021F387 /* Products */ = {
 			isa = PBXGroup;
@@ -84,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				290B80A420283FF000999537 /* ButtonConfig */,
+				29FC1512202B287000958EC7 /* FirstKeywordVC */,
+				29FC150E2029CE9900958EC7 /* FMDB */,
 				08A612852027F49A0021F387 /* AppDelegate.h */,
 				08A612862027F49A0021F387 /* AppDelegate.m */,
 				08A612A12028049B0021F387 /* LoginViewController.h */,
@@ -112,8 +127,30 @@
 			children = (
 				290B80A52028401400999537 /* CommonButton.h */,
 				290B80A62028401400999537 /* CommonButton.m */,
+				29FC15072029C4DE00958EC7 /* KeyWordButton.h */,
+				29FC15082029C4DE00958EC7 /* KeyWordButton.m */,
 			);
 			path = ButtonConfig;
+			sourceTree = "<group>";
+		};
+		29FC150E2029CE9900958EC7 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				29FC150F202AE1C200958EC7 /* DataBase.h */,
+				29FC1510202AE1C200958EC7 /* DataBase.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		29FC1512202B287000958EC7 /* FirstKeywordVC */ = {
+			isa = PBXGroup;
+			children = (
+				29FC1513202B28B000958EC7 /* FirstKeywordViewController.h */,
+				29FC1514202B28B000958EC7 /* FirstKeywordViewController.m */,
+				293CCF63202B93E200C3E338 /* SecondKeywordVC.h */,
+				293CCF64202B93E200C3E338 /* SecondKeywordVC.m */,
+			);
+			path = FirstKeywordVC;
 			sourceTree = "<group>";
 		};
 		5F2B4A638C7DF0CC6BEDB508 /* Frameworks */ = {
@@ -262,13 +299,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				08A6128D2027F49A0021F387 /* LogViewController.m in Sources */,
+				29FC1515202B28B000958EC7 /* FirstKeywordViewController.m in Sources */,
+				29FC1511202AE1C200958EC7 /* DataBase.m in Sources */,
 				08A612A0202803C40021F387 /* SideMenuView.m in Sources */,
 				088A1BF7202844B30041D19B /* LogItem.m in Sources */,
 				08A612A32028049B0021F387 /* LoginViewController.m in Sources */,
 				08A612872027F49A0021F387 /* AppDelegate.m in Sources */,
 				08A612982027F49A0021F387 /* main.m in Sources */,
+				29FC15092029C4DE00958EC7 /* KeyWordButton.m in Sources */,
 				08B7D6B4202B0624000F373B /* ShowMoodView.m in Sources */,
 				08A6128A2027F49A0021F387 /* DictViewController.m in Sources */,
+				293CCF65202B93E200C3E338 /* SecondKeywordVC.m in Sources */,
 				290B80A72028401400999537 /* CommonButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,10 +446,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LDVXT95SNR;
+				DEVELOPMENT_TEAM = QEVMBLGA8U;
 				INFOPLIST_FILE = MoodDict/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = emmm.MoodDict;
+				PRODUCT_BUNDLE_IDENTIFIER = test.abv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -420,10 +462,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LDVXT95SNR;
+				DEVELOPMENT_TEAM = QEVMBLGA8U;
 				INFOPLIST_FILE = MoodDict/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = emmm.MoodDict;
+				PRODUCT_BUNDLE_IDENTIFIER = test.abv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
