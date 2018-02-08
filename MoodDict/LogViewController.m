@@ -32,23 +32,24 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
 
 -(NSMutableArray *)logItemArr{
     if (_logItemArr==nil) {
-        NSString* documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-        self.archiverPath=[documentPath stringByAppendingPathComponent:@"MoodData.data"];
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        if([fileManager fileExistsAtPath:self.archiverPath]){
-            _logItemArr=[NSKeyedUnarchiver unarchiveObjectWithFile:self.archiverPath];
-        }
-        else{
-            _logItemArr=[[NSMutableArray alloc]init];
-        }
-//        _logItemArr=[[NSMutableArray alloc]init];
-//        for (int i=0; i<=10; i++) {
-//            LogItem * item=[[LogItem alloc]init];
-//            item.createdDate=[NSDate date];
-//            item.mood=arc4random()%10;
-//            item.content=[NSString stringWithFormat:@"%d%d%d",i,i,i];
-//            [_logItemArr addObject:item];
+//        NSString* documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+//        self.archiverPath=[documentPath stringByAppendingPathComponent:@"MoodData.data"];
+//        NSFileManager *fileManager = [NSFileManager defaultManager];
+//        if([fileManager fileExistsAtPath:self.archiverPath]){
+//            _logItemArr=[NSKeyedUnarchiver unarchiveObjectWithFile:self.archiverPath];
 //        }
+//        else{
+//            _logItemArr=[[NSMutableArray alloc]init];
+//        }
+        NSTimeInterval secondsPerDay = 24 * 60 * 60;
+        _logItemArr=[[NSMutableArray alloc]init];
+        for (int i=0; i<10; i++) {
+            LogItem * item=[[LogItem alloc]init];
+            item.createdDate=[[NSDate date] dateByAddingTimeInterval:-(10-i)*secondsPerDay ];
+            item.mood=arc4random()%10;
+            item.content=[NSString stringWithFormat:@"%d%d%d",i,i,i];
+            [_logItemArr addObject:item];
+        }
     }
     return  _logItemArr;
 }
@@ -76,7 +77,6 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
     self.graphView.showsHorizontalScrollIndicator=NO;
     self.graphView.bounces=NO;
     [self.view layoutIfNeeded];
-    [self drawGraph];
     //指示器
     UIView * indicatorView=[[UIView alloc]initWithFrame:CGRectMake(self.graphView.frame.size.width/2-1, self.graphView.frame.origin.y, 2, self.graphView.frame.size.height)];
     indicatorView.backgroundColor=[UIColor darkGrayColor];
@@ -117,6 +117,7 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
     }];
     self.inputView.backgroundColor=[UIColor clearColor];
     [self.inputView setHidden:YES];
+//    self.inputView.editable=NO;
     //选择心情
     self.pickV=[[UIPickerView alloc]init];
     [self.displayView addSubview:self.pickV];
@@ -142,17 +143,20 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
         make.centerX.equalTo(self.graphView.mas_centerX);
         make.top.equalTo(self.graphView.mas_bottom).with.offset(10);
         make.height.equalTo(@(40));
-        make.width.equalTo(@(80));
+        make.width.equalTo(@(120));
     }];
     self.dateShower.alpha=0;
     //设置显示当天的日志
-    if ([self.logItemArr lastObject]) {
-        if ([[self.logItemArr lastObject] isLogToday]) {
-            self.addBtn.alpha=0;
-            [self displayLogItem:[self.logItemArr lastObject]];
-            [self.inputView setHidden:NO];
-        }
+    if ([self.logItemArr lastObject]&&[[self.logItemArr lastObject] isLogToday]) {
+        self.addBtn.alpha=0;
+        [self displayLogItem:[self.logItemArr lastObject]];
+        [self.inputView setHidden:NO];
     }
+    else{
+        LogItem * item=[[LogItem alloc]init];
+        [self.logItemArr addObject:item];
+    }
+    [self drawGraph];
 }
 
 -(void)drawGraph{
@@ -186,8 +190,6 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
         make.width.equalTo(@(40));
         make.height.equalTo(self.checkBtn.mas_width);
     }];
-    LogItem * item=[[LogItem alloc]init];
-    [self.logItemArr addObject:item];
 //    [self.inputView setHidden: NO];
 }
 
@@ -197,6 +199,7 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
     }];
     [self.inputView setHidden:NO];
     [self.inputView becomeFirstResponder];
+    self.inputView.editable=YES;
     [self.checkBtn removeFromSuperview];
     [self.logItemArr lastObject].mood=(int)self.selectedRow;
 }
@@ -222,6 +225,7 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
                     [self.checkBtn removeFromSuperview];
                 }];
             }
+//            self.inputView.editable=NO;
         }
     }
     
@@ -260,12 +264,29 @@ char TitleOfMood[10][10]={"快乐","兴趣","共情","平静","厌恶","愤怒",
     if (self.logItemArr.count) {
         int offset=(int)scrollView.contentOffset.x;
         offset=(offset+pointInterval/2)/pointInterval;
-        [self displayLogItem:self.logItemArr[offset]];
+        if (self.logItemArr[offset].content==nil&&(self.logItemArr[offset]==[self.logItemArr lastObject])) {
+            [UIView animateWithDuration:animationDURATION animations:^{
+                self.addBtn.alpha=1;
+                self.inputView.hidden=YES;
+            }];
+        }
+        else{
+            [UIView animateWithDuration:animationDURATION animations:^{
+                self.addBtn.alpha=0;
+                self.inputView.hidden=NO;
+            }];
+            [self displayLogItem:self.logItemArr[offset]];
+        }
         [UIView animateWithDuration:animationDURATION animations:^{
             self.dateShower.alpha=1;
         }];
         NSString * dateString=[[self.logItemArr[offset].createdDate description] substringWithRange:NSMakeRange(5, 5)];
-        self.dateShower.text=dateString;
+        NSString * moodString=[NSString stringWithCString:TitleOfMood[offset] encoding:NSUTF8StringEncoding];
+        if (dateString==nil) {
+            self.dateShower.text=[NSString stringWithFormat:@"今天"];
+        }else{
+            self.dateShower.text=[NSString stringWithFormat:@"%@,%@",dateString,moodString];
+        }
         
     }
 }
